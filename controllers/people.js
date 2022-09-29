@@ -12,7 +12,10 @@ const getAllPeople = async (req, res) => {
 const addPeopleToDB = async (req, res) => {
   try {
     const people = await Peoples.create(req.body);
-    res.status(200).json({ people });
+    if (people.name === people.name) {
+      return res.status(500).json({ msg: "The name is already being used!!" });
+    }
+    return res.status(200).json({ people });
   } catch (error) {
     res.status(500).json({ msg: error });
   }
