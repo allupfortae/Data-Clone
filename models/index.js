@@ -11,8 +11,8 @@ const PeopleSchema = new Schema({
   },
   job: { type: [""], trim: true },
   descriptions: { type: String, trim: true },
-  twitterUrl: { type: String, trim: true },
-  linkedinUrl: { type: String, trim: true },
+  twitterUrl: { type: String },
+  linkedinUrl: { type: String },
   date: { type: Date, default: Date.now },
 });
 
